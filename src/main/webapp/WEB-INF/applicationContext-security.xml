@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:b="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="
+    http://www.springframework.org/schema/security 
+    http://www.springframework.org/schema/security/spring-security-4.2.xsd
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	<http auto-config="true">
+		<intercept-url pattern="/hello" access="hasRole('ROLE_SCARVAREZ_MEMBER')" />
+	</http>
+   <authentication-manager>
+      <authentication-provider>
+	<user-service>
+		<user authorities="ROLE_SCARVAREZ_MEMBER" name="car" password="scarvarez" />
+		<user authorities="ROLE_SCARVAREZ_MEMBER" name="mon" password="scarvarez" />
+		<user authorities="ROLE_SCARVAREZ_MEMBER" name="bea" password="scarvarez" />
+		<user authorities="ROLE_SCARVAREZ_MEMBER" name="andr" password="scarvarez" />
+	</user-service>
+      </authentication-provider>
+   </authentication-manager>
+</b:beans>
